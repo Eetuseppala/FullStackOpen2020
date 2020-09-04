@@ -1,0 +1,36 @@
+note over selain:
+selain on sivulla
+https://studies.cs.helsinki.fi/exampleapp/spa
+end note
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over selain:
+pyyntöön liitetty header (Content-type)
+kertoo palvelimelle, että pyynnön mukana
+oleva data on JSON-muodossa
+end note
+
+note over selain:
+datan lähettämisen palvelimelle
+hoitaa selaimen lataamassa JavaScript-
+tiedostossa määritelty koodi
+end note
+
+note over selain:
+tapahtumankäsittelijä lisää muistiinpanon
+listalle komennolla notes.push(note),
+piirtää muistiinpanojen listan uudelleen
+ja lähettää uuden muistiinpanon palvelimelle
+end note
+
+note over palvelin:
+palvelin EI uudelleenohjaa selainta
+tekemään uutta HTTP-pyyntöä
+end note
+
+palvelin-->selain: HTTP-statuskoodi 201 (created)
+
+note over selain:
+selain pysyy samalla sivulla
+end note
