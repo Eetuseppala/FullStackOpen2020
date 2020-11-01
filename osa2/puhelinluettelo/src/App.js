@@ -25,7 +25,7 @@ const App = () => {
     if (persons.some(person => person.name === newName && typeof person.id !== "undefined")) {
       event.preventDefault()
       const personToBeRemoved = persons.find(person => person.name === newName)
-      if(window.confirm(`${newName} is already in the phonebook. Overwrite?`)) {
+      if(window.confirm(`${newName} is already in the phone book. Overwrite?`)) {
         personService.replace(personToBeRemoved, personObject).then(response =>{
           setPersons(persons.map(person => person.name === personObject.name ? personObject : person ))
           setNewName('')
