@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'https://ejs-fullstackopen2020-part3.herokuapp.com/api/persons'
+const baseUrl = '/api/persons'
 
 const getAll = () => {
     return axios.get(baseUrl)
@@ -12,7 +12,7 @@ const create = personObject => {
 
 const remove = filteredPerson => {
     return axios
-    .delete(baseUrl + `${filteredPerson.id}`)
+    .delete(baseUrl + `/${filteredPerson.id}`)
 }
 
 const replace = (personToBeRemoved, personObject) => {
